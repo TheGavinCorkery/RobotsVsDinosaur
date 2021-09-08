@@ -33,6 +33,9 @@ class Battlefield:
         while total_dino_health > 0 or total_robot_health > 0:
             #Dino turn
             self.dino_turn(self.herd.dinosaurs)
+            
+            if total_dino_health <= 0 or total_robot_health <= 0:
+                break
             #Robot turn
             self.robo_turn(self.fleet.robots)
             total_robot_health = self.fleet.robots[0].health + self.fleet.robots[1].health + self.fleet.robots[2].health
