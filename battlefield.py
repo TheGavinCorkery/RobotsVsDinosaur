@@ -27,8 +27,10 @@ class Battlefield:
     def battle(self):
         total_robot_health = self.get_total_robot_health()
         total_dino_health = self.get_total_dino_health()
-
+        round = 1
         while total_dino_health > 0 and total_robot_health > 0:
+            print('--------------------------------------------')
+            print('\n\nRound ', round)
             #Dino turn
             self.dino_turn()
 
@@ -41,6 +43,7 @@ class Battlefield:
             self.robo_turn()
             total_robot_health = self.get_total_robot_health()
             total_dino_health = self.get_total_dino_health()
+            round += 1
             
 
     def get_total_robot_health(self):
