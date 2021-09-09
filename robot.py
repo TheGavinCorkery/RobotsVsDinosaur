@@ -8,4 +8,5 @@ class Robot:
 
     def attack(self, dinosaur):
         dinosaur.health -= self.weapon.attack_power
+        print('\nThe robots attack did', self.weapon.attack_power, 'damage to the dinosaur')
         

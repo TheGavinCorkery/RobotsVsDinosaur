@@ -1,9 +1,10 @@
 
 class Dinosaur:
-    def __init__(self, name, attack_power):
+    def __init__(self, name):
         self.name = name
-        self.attack_power = attack_power
+        self.attack_power = 8
         self.health = 30
 
     def attack(self, robot):
         robot.health = robot.health - self.attack_power
+        print('\nThe dinosaurs attack did', self.attack_power, 'damage to the robot')

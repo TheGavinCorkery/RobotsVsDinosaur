@@ -30,7 +30,7 @@ class Battlefield:
         round = 1
         while total_dino_health > 0 and total_robot_health > 0:
             print('--------------------------------------------')
-            print('\n\nRound ', round)
+            print('\nRound ', round)
             #Dino turn
             self.dino_turn()
 
