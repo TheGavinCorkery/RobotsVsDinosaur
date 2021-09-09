@@ -48,14 +48,14 @@ class Battlefield:
 
     def get_total_robot_health(self):
         total_robot_health = self.fleet.robots[0].health + self.fleet.robots[1].health + self.fleet.robots[2].health
-        if total_robot_health == 0:
+        if total_robot_health <= 0:
             self.winner = 'dinos'
         return total_robot_health
          
     
     def get_total_dino_health(self):
         total_dino_health =  self.herd.dinosaurs[0].health + self.herd.dinosaurs[1].health + self.herd.dinosaurs[2].health
-        if total_dino_health == 0:
+        if total_dino_health <= 0:
             self.winner = 'robots'
         return total_dino_health
 
