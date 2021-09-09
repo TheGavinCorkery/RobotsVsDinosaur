@@ -19,7 +19,7 @@ class Battlefield:
         
 
     def display_welcome(self):
-        print('Welcome to the battle between dinosaurs and robots. ')
+        print('\nWelcome to the battle between dinosaurs and robots. ')
         print('Your job is to interact with the console in order to fight with the dinosaurs and the robots')
         
 
@@ -104,6 +104,7 @@ class Battlefield:
         
 
     def display_winners(self):
+        print('--------------------------------------------')
         if self.winner == 'dinos':
             print('\n\nThe dinosaurs have defeated the robots')
         elif self.winner == 'robots':
