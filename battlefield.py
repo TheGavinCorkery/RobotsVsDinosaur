@@ -28,7 +28,7 @@ class Battlefield:
         total_robot_health = self.get_total_robot_health()
         total_dino_health = self.get_total_dino_health()
         round = 1
-        while total_dino_health > 0 and total_robot_health > 0:
+        while total_dino_health > 0 or total_robot_health > 0:
             print('--------------------------------------------')
             print('\nRound ', round)
             #Dino turn
@@ -36,7 +36,7 @@ class Battlefield:
 
             total_robot_health = self.get_total_robot_health()
             total_dino_health = self.get_total_dino_health()
-            if total_dino_health <= 0 and total_robot_health <= 0:
+            if total_dino_health <= 0 or total_robot_health <= 0:
                 break
 
             #Robot turn
