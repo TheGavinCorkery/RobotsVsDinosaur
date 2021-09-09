@@ -33,7 +33,8 @@ class Battlefield:
         while total_dino_health > 0 or total_robot_health > 0:
             #Dino turn
             self.dino_turn(self.herd.dinosaurs)
-            
+            total_robot_health = self.fleet.robots[0].health + self.fleet.robots[1].health + self.fleet.robots[2].health
+            total_dino_health = self.herd.dinosaurs[0].health + self.herd.dinosaurs[1].health + self.herd.dinosaurs[2].health
             if total_dino_health <= 0 or total_robot_health <= 0:
                 break
             #Robot turn
@@ -75,14 +76,16 @@ class Battlefield:
         #Display all of the dinosaurs and their health
         print('\nDinosaurs:')
         for x in range (0, len(self.herd.dinosaurs)):
-            print('Dinosaur ', x + 1, 'name and health: ', self.herd.dinosaurs[x].name, ' ', self.herd.dinosaurs[x].health)
+            if self.herd.dinosaurs[x].health > 0:
+                print('Dinosaur ', x + 1, 'name and health: ', self.herd.dinosaurs[x].name, ' ', self.herd.dinosaurs[x].health)
         
 
     def show_robo_opponent_options(self):
         print('\nRobots:')
         #Display all of the robots and their health
         for x in range (0, len(self.herd.dinosaurs)):
-            print('Robot ', x + 1, 'name and health: ', self.fleet.robots[x].name, ' ', self.fleet.robots[x].health)
+            if self.fleet.robots[x].health > 0:
+                print('Robot ', x + 1, 'name and health: ', self.fleet.robots[x].name, ' ', self.fleet.robots[x].health)
         
 
     def display_winners(self):
